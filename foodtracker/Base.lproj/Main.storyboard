@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZH1-fa-AtR">
-                                <rect key="frame" x="20" y="40" width="374" height="604.33333333333337"/>
+                                <rect key="frame" x="20" y="40" width="374" height="538.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTd-G8-LTJ">
                                         <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="20.333333333333332"/>
@@ -50,7 +50,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zPu-jY-rOz" customClass="RatingControl" customModule="foodtracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="494.33333333333337" width="200" height="110"/>
+                                        <rect key="frame" x="0.0" y="494.33333333333337" width="252" height="44"/>
                                         <viewLayoutGuide key="safeArea" id="yuM-ej-Gz8"/>
                                     </stackView>
                                 </subviews>
@@ -65,7 +65,7 @@
                             <constraint firstItem="ZH1-fa-AtR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="4F2-UV-t6s"/>
                             <constraint firstItem="ZH1-fa-AtR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Lfw-em-n8N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZH1-fa-AtR" secondAttribute="trailing" constant="20" id="nW3-ra-hoR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZH1-fa-AtR" secondAttribute="bottom" constant="91.670000000000002" id="ual-xj-Lpb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZH1-fa-AtR" secondAttribute="bottom" constant="91.670000000000002" id="ual-xj-Lpb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
