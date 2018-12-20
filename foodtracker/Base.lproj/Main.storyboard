@@ -50,11 +50,11 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zPu-jY-rOz" customClass="RatingControl" customModule="foodtracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="494.33333333333337" width="304" height="44"/>
+                                        <rect key="frame" x="0.0" y="494.33333333333337" width="252" height="44"/>
                                         <viewLayoutGuide key="safeArea" id="yuM-ej-Gz8"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="startCount">
-                                                <integer key="value" value="6"/>
+                                                <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                 <size key="value" width="44" height="44"/>
@@ -81,6 +81,7 @@
                         <outlet property="mealNameLabel" destination="dTd-G8-LTJ" id="1v3-WY-8lT"/>
                         <outlet property="nameTextField" destination="w4b-Pz-oKL" id="43g-eX-Be7"/>
                         <outlet property="photoImageView" destination="g6G-k6-2cN" id="fNe-g2-a5Z"/>
+                        <outlet property="ratingControl" destination="zPu-jY-rOz" id="e30-Cb-AWW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
