@@ -70,6 +70,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     // MARK: Navigation
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     // This method lets you configure a view controller before it's presented
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,8 +89,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         // prepare the meal to be passed to the meals list controller
         // after the unwind segue
-        meal = Meal(name: name, photo: photo, rating: rating)
-        
+        meal = Meal(name: name, photo: photo, rating: rating)        
     }
     
     // MARK: Actions
