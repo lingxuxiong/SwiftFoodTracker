@@ -22,7 +22,7 @@ class Meal: NSObject, NSCoding {
     
     // MARK: Types
     struct PropertyKey {
-        static let name = "Name"
+        static let name = "name"
         static let photo = "photo"
         static let rating = "rating"
     }
@@ -61,10 +61,10 @@ class Meal: NSObject, NSCoding {
         // photo is optional, so just use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         
-        // no need to downcast to Int and there is no optional to unwrap?
-        let rating = aDecoder.decodeObject(forKey: PropertyKey.rating) as? Int
+        // no need to downcast to Int and there is no optional to unwrap
+        let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
         // must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating ?? 0)
+        self.init(name: name, photo: photo, rating: rating)
     }
 }
