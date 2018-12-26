@@ -176,16 +176,29 @@ class MealTableViewController: UITableViewController {
     }
     
     private func saveMeals() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL!.path)
-        if (isSuccessfulSave) {
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: meals, requiringSecureCoding: false)
+            try data.write(to: Meal.ArchiveURL!)
             os_log("Meals successfully saved", log: .default, type: .debug)
-        } else {
+        } catch {
             os_log("Failed to save Meals.", log: .default, type: .error)
         }
     }
     
     private func loadMeals() -> [Meal]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL!.path) as? [Meal]
+        do {
+            guard let data = try? Data(contentsOf: Meal.ArchiveURL!) else {
+                return nil
+            }
+            
+            if let loadedMeals = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Meal] {
+                return loadedMeals
+            }
+        } catch {
+            os_log("Failed to load meals.", log: .default, type: .error)
+        }
+        
+        return nil
     }
 
 }
