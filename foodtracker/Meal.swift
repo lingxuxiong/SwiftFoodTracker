@@ -33,7 +33,7 @@ class Meal: NSObject, NSCoding {
             return nil
         }
         
-        guard (rating >= 0) && (rating <= 5) else {
+        guard (rating >= 1) && (rating <= 5) else {
             return nil
         }
         

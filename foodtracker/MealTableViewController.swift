@@ -26,8 +26,14 @@ class MealTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         self.navigationItem.leftBarButtonItem = editButtonItem
         
-        // Load the sample meals
-        loadSampleMeals()
+        // Load any saved meals, otherwise load the sample meals
+        if let savedMeals = loadMeals() {
+            os_log("saved meals were loaded", log: .default, type: .debug)
+            meals += savedMeals
+        } else {
+            os_log("to load sample meals", log: .default, type: .debug)
+            loadSampleMeals()
+        }
     }
 
     // MARK: - Table view data source
@@ -69,6 +75,7 @@ class MealTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             meals.remove(at: indexPath.row)
+            saveMeals()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -142,6 +149,8 @@ class MealTableViewController: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             
+            // save the meals to persistence storage
+            saveMeals()
         }
     }
     
@@ -164,6 +173,19 @@ class MealTableViewController: UITableViewController {
         }
         
         meals += [meal1, meal2, meal3]
+    }
+    
+    private func saveMeals() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL!.path)
+        if (isSuccessfulSave) {
+            os_log("Meals successfully saved", log: .default, type: .debug)
+        } else {
+            os_log("Failed to save Meals.", log: .default, type: .error)
+        }
+    }
+    
+    private func loadMeals() -> [Meal]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL!.path) as? [Meal]
     }
 
 }
