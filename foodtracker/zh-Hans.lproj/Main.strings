@@ -1,0 +1,12 @@
+
+/* Class = "UINavigationItem"; title = "New Meal"; ObjectID = "Goy-aa-8u1"; */
+"Goy-aa-8u1.title" = "添加食物";
+
+/* Class = "UINavigationItem"; title = "Your Meals"; ObjectID = "Jp0-9q-Aw9"; */
+"Jp0-9q-Aw9.title" = "食物列表";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ol1-5K-3gb"; */
+"Ol1-5K-3gb.text" = "标签";
+
+/* Class = "UITextField"; placeholder = "Enter meal name"; ObjectID = "w4b-Pz-oKL"; */
+"w4b-Pz-oKL.placeholder" = "输入食物名称";
