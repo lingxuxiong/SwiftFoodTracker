@@ -76,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZH1-fa-AtR">
-                                <rect key="frame" x="20" y="84" width="374" height="468"/>
+                                <rect key="frame" x="20" y="84" width="374" height="474"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4b-Pz-oKL">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -95,7 +95,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zPu-jY-rOz" customClass="RatingControl" customModule="foodtracker" customModuleProvider="target">
-                                        <rect key="frame" x="61" y="424" width="252" height="44"/>
+                                        <rect key="frame" x="61" y="424" width="252" height="50"/>
                                         <viewLayoutGuide key="safeArea" id="yuM-ej-Gz8"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="startCount">
@@ -110,6 +110,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="zPu-jY-rOz" secondAttribute="bottom" id="2bQ-WZ-RfR"/>
                                     <constraint firstAttribute="trailing" secondItem="w4b-Pz-oKL" secondAttribute="trailing" id="5jt-wk-Qp4"/>
+                                    <constraint firstItem="zPu-jY-rOz" firstAttribute="leading" secondItem="ZH1-fa-AtR" secondAttribute="leading" constant="61" id="EBJ-L7-Xf7"/>
                                     <constraint firstItem="w4b-Pz-oKL" firstAttribute="leading" secondItem="ZH1-fa-AtR" secondAttribute="leading" id="uXh-R2-9mq"/>
                                 </constraints>
                             </stackView>
@@ -117,6 +118,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZH1-fa-AtR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="4F2-UV-t6s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZH1-fa-AtR" secondAttribute="bottom" constant="178" id="CC6-C5-6Dc"/>
                             <constraint firstItem="ZH1-fa-AtR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Lfw-em-n8N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZH1-fa-AtR" secondAttribute="trailing" constant="20" id="nW3-ra-hoR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZH1-fa-AtR" secondAttribute="bottom" constant="91.670000000000002" id="ual-xj-Lpb"/>
@@ -193,6 +195,6 @@
         <image name="defaultPhoto" width="1080" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JVv-SN-YrK"/>
+        <segue reference="hot-8t-EUu"/>
     </inferredMetricsTieBreakers>
 </document>
